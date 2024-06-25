@@ -4,26 +4,25 @@ function day2(day){
         case 'monday':
             console.log('Watch course of Js');
             break;
-        case 'Tuesday':
+        case 'tuesday':
             console.log('Run in the park');
             break;
         case 'wednesday':
         case 'thursday':
             console.log('Record Videos');
             break;
-        case 'Friday':
+        case 'friday':
             console.log('Edit Videos');
             break;
-        case 'Saturday':
-        case 'Sunday':
+        case 'saturday':
+        case 'sunday':
             console.log('Play Video game');
             break;
         default:
             console.log('Not a valid day');
     } 
 }
-day('sunday')
-
+day2('sunday');
 
 
 function day(day){
