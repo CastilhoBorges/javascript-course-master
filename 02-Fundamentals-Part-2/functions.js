@@ -87,4 +87,4 @@ console.log(fruitProcessor(5, 6));
 Primeiro criamos uma função de cortar as frutas, e dentro da função de processar as frutas nos chamamos essa função e colocamos os parâmetros que será passado quando chamarmos a função de processar e armazenamos ela nas devidas variáveis. Ou seja quando chamarmos a função de processar as frutas colocando os parâmetros ela vai substituir esses valores e quando a função de cortar for chamada ela vai se executar e jogar nas variáveis e depois a string vem e nos da o retorno.  
 */
 
-/*==========================================================*/
+/*==========================================================*/ 
