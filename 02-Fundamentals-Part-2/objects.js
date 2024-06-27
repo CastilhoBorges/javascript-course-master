@@ -52,6 +52,6 @@ console.log(`${augusto.firstName} has ${augusto.friends.length} friends, and his
 O . é um operador de mais alto nivel, e ele realiza em left-to-right, por isso que o exemplo acima funciona os colchetes vem logo depois.  
 */
 
-// Objects Methods
+
 
 
