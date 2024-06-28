@@ -2,27 +2,35 @@
 
 const mark = {
     fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
+    mass: 92,
+    height: 1.95,
     calcBMI: function() {
-        return this.mass / (this.height * this.height);
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi
     }
 };
-mark.bmi = mark.calcBMI().toFixed(1);
+
 
 
 const john = {
     fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
+    mass: 78,
+    height: 1.60,
     calcBMI: function() {
-        return this.mass / (this.height * this.height);
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi
     }
 };
-john.bmi = john.calcBMI().toFixed(1);
 
-console.log(`${mark.bmi > john.bmi ? mark.fullName : john.fullName}'s BMI (${mark.bmi > john.bmi ? mark.bmi : john.bmi}) is higer than ${mark.bmi < john.bmi ? mark.fullName : john.fullName}'s (${mark.bmi < john.bmi ? mark.bmi : john.bmi})`);
+mark.calcBMI();
+john.calcBMI();
 
+
+if (mark.bmi > john.bmi) {
+    console.log(`${mark.fullName}'s BMI (${mark.bmi.toFixed(1)}) is higher than ${john.fullName}'s (${john.bmi.toFixed(1)})!`)
+  } else if (john.bmi > mark.bmi) {
+    console.log(`${john.fullName}'s BMI (${john.bmi.toFixed(1)}) is higher than ${mark.fullName}'s (${mark.bmi.toFixed(1)})!`)
+  }
 
 
 
