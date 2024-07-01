@@ -1,0 +1,2 @@
+Bugs é um termo usado na programação para falar que uma parte do programa não esta funcionando da forma que deveria.
+Pra corrigir isso temos os debuggers, ferramentas usadas para deixar nosso codigo otimizado. 
