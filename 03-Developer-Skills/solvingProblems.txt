@@ -1,0 +1,7 @@
+1 - Tenha certeza que entendeu 100% do problema 
+
+2 - Dividir para conquistar, sempre divida o problema em subproblemas 
+
+3 -  Se não conseguir, pesquise 
+
+4 - Antes de escrever o problema maior, escreva pseudocodigos 
