@@ -23,9 +23,7 @@ console.log(document.querySelector(".guess").value); // registramos no console
 
 */
 
-const secretNumber = Math.trunc(Math.random() * 100) + 1;
-document.querySelector(".number").textContent = secretNumber;
-
+let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 10;
 
 // O metodo addEventListener como primeiro argumento recebe a ação que vai ser
@@ -42,6 +40,7 @@ document.querySelector(".check").addEventListener("click", function () {
     // Quando o player ganha
   } else if (guess === secretNumber) {
     document.querySelector(".message").textContent = "Correct Number🥊";
+    document.querySelector(".number").textContent = secretNumber;
     document.querySelector("body").style.backgroundColor = "#60b347";
 
     document.querySelector(".number").style.width = "30rem";
@@ -68,4 +67,22 @@ document.querySelector(".check").addEventListener("click", function () {
       document.querySelector(".message").textContent = "You lost the game!";
     }
   }
+});
+
+document.querySelector(".again").addEventListener("click", function () {
+  // Secret Number 
+  score = 10;
+  secretNumber = Math.trunc(Math.random() * 100) + 1;
+
+  // Texts 
+  document.querySelector(".score").textContent = score;
+  document.querySelector(".number").textContent = "?";
+  document.querySelector(".message").textContent = "Start guessing...";
+
+    // Valor do Input
+  document.querySelector(".guess").value = "";
+
+  // Styles Reset 
+  document.querySelector("body").style.backgroundColor = "#222";
+  document.querySelector(".number").style.width = "15rem";
 });
