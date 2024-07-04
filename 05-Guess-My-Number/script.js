@@ -25,6 +25,7 @@ console.log(document.querySelector(".guess").value); // registramos no console
 
 let secretNumber = Math.trunc(Math.random() * 100) + 1;
 let score = 10;
+let highScore = 0;
 
 // O metodo addEventListener como primeiro argumento recebe a ação que vai ser
 // realizada e como segundo parametro a função com oque vai acontecer logo apos o click
@@ -44,6 +45,11 @@ document.querySelector(".check").addEventListener("click", function () {
     document.querySelector("body").style.backgroundColor = "#60b347";
 
     document.querySelector(".number").style.width = "30rem";
+
+    if (score > highScore) {
+      highScore = score;
+      document.querySelector(".highscore").textContent = highScore;
+    }
 
     // Quando o input é maior
   } else if (guess > secretNumber) {
@@ -70,19 +76,19 @@ document.querySelector(".check").addEventListener("click", function () {
 });
 
 document.querySelector(".again").addEventListener("click", function () {
-  // Secret Number 
+  // Secret Number
   score = 10;
   secretNumber = Math.trunc(Math.random() * 100) + 1;
 
-  // Texts 
+  // Texts
   document.querySelector(".score").textContent = score;
   document.querySelector(".number").textContent = "?";
   document.querySelector(".message").textContent = "Start guessing...";
 
-    // Valor do Input
+  // Valor do Input
   document.querySelector(".guess").value = "";
 
-  // Styles Reset 
+  // Styles Reset
   document.querySelector("body").style.backgroundColor = "#222";
   document.querySelector(".number").style.width = "15rem";
 });
