@@ -32,7 +32,7 @@ const displayMessage = function (message) {
 };
 
 const displayScore = function (message) {
-  document.querySelector(".score").textContent - message;
+  document.querySelector(".score").textContent = message;
 };
 
 const backgroundColor = function (color) {
