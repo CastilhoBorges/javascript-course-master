@@ -37,9 +37,6 @@ btnRoll.addEventListener("click", function () {
     currentScore += dice;
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-    btnHold.addEventListener("click", function () {
-      score0El.textContent = currentScore;
-    });
   } else {
     // Switch to next player
     document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -47,8 +44,19 @@ btnRoll.addEventListener("click", function () {
     activePlayer = activePlayer === 0 ? 1 : 0;
     player00.classList.toggle("player--active");
     player01.classList.toggle("player--active");
-    btnHold.addEventListener("click", function () {
-      score1El.textContent = currentScore;
-    });
+  }
+});
+
+btnHold.addEventListener("click", function () {
+  if (activePlayer === 0) {
+    score0El.textContent = currentScore;
+  } else {
+    score1El.textContent = currentScore;
+  }
+
+  if (score0El.textContent >= 100) {
+    current0El.textContent = "Win";
+  } else if (score1El.textContent >= 100) {
+    current1El.textContent = "Win";
   }
 });
