@@ -1,5 +1,5 @@
 "use strict";
-
+/*
 // This no global
 console.log(this);
 
@@ -28,4 +28,37 @@ const augusto = {
   },
 };
 
+augusto.calcAge(); */
+
+const augusto = {
+  firstName: "Augusto",
+  year: 2005,
+  calcAge: function () {
+    console.log(2024 - this.year);
+
+    // Solution 1
+    // const self = this;
+    // const isMillenial = function () {
+    // console.log(self);
+    // console.log(self.year >= 1981 && self.year <= 1996);
+    // };
+
+    // Solution 2
+    const isMillenial = () => {
+      console.log(self);
+      console.log(self.year >= 1981 && self.year <= 1996);
+    };
+
+    isMillenial();
+  },
+};
+
 augusto.calcAge();
+
+// Argumentos Keyword
+const addExpr = function (a, b) {
+  console.log(arguments);
+  return a + b;
+};
+
+var addArrow = (a, b) => a + b;
