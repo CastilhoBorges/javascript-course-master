@@ -244,6 +244,8 @@ const ratingStars = [63405, 1808];
 [fiveStarRatings, oneStarRatingse, threeStarRatings = 0] = ratingStars;
 // console.log(fiveStarRatings, oneStarRatingse, threeStarRatings);
 
+/////////// Destructuring Objetcts ////////////////
+
 // Destructure the first book object from the books array into variables called title, author and ISBN.
 const { title, author, ISBN } = books[0];
 // console.log(title, author, ISBN);
@@ -254,13 +256,13 @@ const { keywords: tags } = books[0];
 
 // The seventh book from the books array is missing the programmingLanguage property. Destructure the seventh book object (books[6]) into variables called language and programmingLanguage. Assign the programmingLanguage variable with a default value of 'unknown'.
 const { language, programmingLanguage = "unknown" } = books[6];
-console.log(language, programmingLanguage);
+// console.log(language, programmingLanguage);
 
 // Below are two variables called bookTitle and bookAuthor. Reassign them with the values of the title and author properties of the first book object from the books array.
 let bookTitle = "unknown";
 let bookAuthor = "unknown";
 ({ title: bookTitle, author: bookAuthor } = books[0]);
-console.log(bookTitle, bookAuthor);
+// console.log(bookTitle, bookAuthor);
 
 /*
 
@@ -290,7 +292,7 @@ const {
     goodreads: { rating: bookRating },
   },
 } = books[0];
-console.log(bookRating);
+// console.log(bookRating);
 
 /*
 
@@ -303,4 +305,40 @@ If year is undefined (was not passed), it should be assigned with a default valu
 function printBookInfo(title, author, year = "year unknown") {
   console.log(`${title} by ${author}, ${year}`);
 }
-printBookInfo();
+// printBookInfo();
+
+///////////////////////////// Spread Operator ////////////////////////////////////////
+
+/* 
+
+Each book object has the author property, which stores an array of strings (author names) if there are multiple authors, or a single string (author name) if there is just one author.
+
+Declare an array called bookAuthors, and fill it with authors of the first two books from the books array. The bookAuthors array should have just one level (no nested arrays).
+
+*/
+
+const bookAuthors = [...books[0].author, ...books[1].author];
+// console.log(bookAuthors);
+
+// Write a function called spellWord that accepts a single string as an argument. This function should log to the console each letter of the argument separated by a space.
+const spellWord = function (str) {
+  console.log(...str);
+};
+// spellWord("Augusto");
+
+// Crie duas arrays, array1 e array2, contendo qualquer número de elementos. Utilize o operador spread para combinar as duas arrays em uma nova array, array3.
+const arr1 = [2, 5, 6];
+const arr2 = [9, 10, 11];
+const arr3 = [...arr1, ...arr2];
+// console.log(arr3);
+
+/*
+
+Crie uma array, originalArray, contendo qualquer número de elementos. Utilize o operador spread para criar uma cópia da originalArray em uma nova array, newArray. Certifique-se de que as modificações feitas em newArray não afetem a originalArray.
+
+*/
+
+const originalArray = ["Augusto", 25, "Developer", 2005];
+const newArrCopy = ["Cintia", ...originalArray];
+// console.log(newArrCopy);
+
