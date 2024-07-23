@@ -37,6 +37,8 @@ const restaurant = {
     console.log(`Here is your delicuous ${ing1} and ${ing2} and ${ing3}`);
   },
 };
+/*
+/////////// SPREAD OPERATOR /////////////////////////
 
 const array = [7, 8, 9];
 const badNewArr = [1, 2, array[0], array[1], array[2]];
@@ -75,3 +77,28 @@ const restaurantCopy = { ...restaurant };
 restaurantCopy.name = "Ristorante Roma";
 console.log(restaurantCopy.name);
 console.log(restaurant.name);
+
+let a = [1234];
+let b = [...a];
+b.shift();
+console.log(b);
+*/
+
+////////////// REST OPERATOR ///////////////////////
+
+// Usamos o spread operator, porem usamos em vez de usar ele em valores que são separados por virgula, usamos em variaveis separadas por virugula para pegar o resto dos valores
+
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others); // 1 2 [ 3, 4, 5 ]
+
+function add(first, ...others) {
+  console.log(first);
+  console.log(others);
+  const arr = [];
+  arr.push(others, first);
+  console.log(arr);
+}
+add(1, 2, 3, 4, 5); // 1
+// [2, 3, 4, 5]
+
+////////////// OR AND operators ///////////////////////
