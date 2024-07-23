@@ -361,7 +361,7 @@ Write a function called printBookAuthorsCount that has two parameters called tit
 const printBookAuthorsCount = function (title, ...author) {
   console.log(`The book "${title}" has ${author.length} authors`);
 };
-printBookAuthorsCount("Algorithms", "Robert Sedgewick", "Kevin Wayne");
+// printBookAuthorsCount("Algorithms", "Robert Sedgewick", "Kevin Wayne");
 
 ////////////////// Short Circuiting ////////////////////////////
 
@@ -383,7 +383,7 @@ Use short-circuiting.
 const hasExamplesInJava = function (book) {
   return book.programmingLanguage === "Java" || "no data available";
 };
-console.log(hasExamplesInJava(books[0]));
+// console.log(hasExamplesInJava(books[0]));
 
 /*
 
@@ -399,7 +399,19 @@ Some of the book objects have the onlineContent property, which is either true o
 */
 function loop(arr) {
   for (let i = 0; i < arr.length; i++) {
-    arr[i].onlineContent && console.log(`"${title}" provides online content`);
+    arr[i].onlineContent && console.log(`"${arr[i].title}" provides online content`);
   }
 }
 loop(books);
+
+/////////// The Nullish Coalescing Operator //////////////
+
+/*
+There are objects in the books array that don't have the onlineContent property at all. Loop over the books array, and log a string to the console in this format: "${title}" provides no data about its online content.
+*/
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent ??
+    console.log(`${books[i].title}" provides no data about its online content`);
+}
+
+

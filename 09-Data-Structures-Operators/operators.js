@@ -82,7 +82,7 @@ let a = [1234];
 let b = [...a];
 b.shift();
 console.log(b);
-*/
+
 
 ////////////// REST OPERATOR ///////////////////////
 
@@ -108,3 +108,43 @@ console.log(trueOrFalse); // retorna o segundo pois o OR entra em circuito quand
 
 const falseOrTrue = 0 && "yes";
 console.log(falseOrTrue); // retorna o primeiro pois o AND entra em circuito quando passa pelo falso, caso todos sejam verdadeiros ele retorna o ultimo elemento do circuito 
+
+
+//////////// The Nullish Coalescing Operator ///////////////
+
+restaurant.numGuests = null;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+const guestCorrect = restaurant.numGuests ?? 10;
+console.log(guestCorrect);
+*/
+
+///////////// Logical Assignment Operators ////////////////
+
+const rest1 = {
+  name: "Capri",
+  numGuests: 20,
+};
+
+const rest2 = {
+  name: "Giulio",
+  owner: "Castilho Borges",
+};
+
+// rest2.numGuests = rest2.numGuests || 10;
+// rest1.numGuests = rest1.numGuests || 10;
+
+// rest1.numGuests ||= 10;
+// rest2.numGuests ||= 10;
+
+// nullish assignment operator (null or undefined)
+//rest1.numGuests ??= 30;
+//rest2.numGuests ??= 10;
+// console.log(rest1);
+//console.log(rest2);
+
+rest1.owner &&= "<AAAA>";
+rest2.owner &&= "<AAAA>";
+console.log(rest1);
+console.log(rest2);
