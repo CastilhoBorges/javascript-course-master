@@ -102,3 +102,9 @@ add(1, 2, 3, 4, 5); // 1
 // [2, 3, 4, 5]
 
 ////////////// OR AND operators ///////////////////////
+
+const trueOrFalse = 0 || "yes";
+console.log(trueOrFalse); // retorna o segundo pois o OR entra em circuito quando encontra o verdadeiro, caso todos sejam falsos ele retorna o ultimo elemento do circuito 
+
+const falseOrTrue = 0 && "yes";
+console.log(falseOrTrue); // retorna o primeiro pois o AND entra em circuito quando passa pelo falso, caso todos sejam verdadeiros ele retorna o ultimo elemento do circuito 
