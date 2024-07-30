@@ -47,7 +47,7 @@ console.log(p, q, r);
 */
 
 //////////////////////////////////////////////////
-const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun']
+const weekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 const openingHours = {
   [weekdays[3]]: {
     open: 12,
@@ -137,6 +137,29 @@ for (const n of menu) {
 // No of o n vai ter como valor, o valor de cada elemento do array
 
 // O loop for usamos para pecorrer arrays, o for normal é muito complexo comparado ao for-of e for-in
-*/
 
-console.log(restaurant);
+*/
+//////// Looping Objects /////////
+
+// Property NAMES
+const properties = Object.keys(openingHours);
+console.log(properties);
+
+let openStr = `We are open on ${properties.length} days: `;
+for (const day of Object.keys(openingHours)) {
+  openStr += `${day}, `;
+}
+console.log(openStr);
+
+// Property VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+// Entries object
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and close at ${close}`);
+}
+  
