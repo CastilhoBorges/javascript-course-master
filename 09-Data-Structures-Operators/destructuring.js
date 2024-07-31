@@ -138,7 +138,7 @@ for (const n of menu) {
 
 // O loop for usamos para pecorrer arrays, o for normal é muito complexo comparado ao for-of e for-in
 
-*/
+
 //////// Looping Objects /////////
 
 // Property NAMES
@@ -162,4 +162,33 @@ console.log(entries);
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close at ${close}`);
 }
-  
+
+
+const person = {
+  nome: "Agu",
+  idade: 19,
+  Amigos: ["jorge", "pedro"],
+};
+
+let values = Object.entries(person.Amigos);
+console.log(values);
+
+*/
+
+//////////////// SETS ////////////////////////
+
+const arr = [];
+const setTest = new Set(["Pizza", "Pizza", "Sanduiche", "Torta"]);
+
+for (const setCount of setTest) arr.unshift(setCount);
+
+console.log(setTest);
+console.log(arr);
+
+const staff = ["Waiter", "Chef", "Waiter", "Chef"];
+const staffUnique = [...new Set(staff)];
+
+console.log(staffUnique);
+console.log(new Set('AugustoCastilhoBorges').size);
+
+console.log(setTest.add('arroz'));
