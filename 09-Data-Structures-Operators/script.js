@@ -173,7 +173,7 @@ const person = {
 let values = Object.entries(person.Amigos);
 console.log(values);
 
-*/
+
 
 //////////////// SETS ////////////////////////
 
@@ -192,3 +192,44 @@ console.log(staffUnique);
 console.log(new Set('AugustoCastilhoBorges').size);
 
 console.log(setTest.add('arroz'));
+*/
+
+////////// MAPS //////////
+
+const rest = new Map();
+
+rest
+  .set("nome", "Augusto")
+  .set("age", 19)
+  .set(true, "TrueBrow")
+  .set(false, "FalseBrow");
+
+console.log(rest);
+
+const question = new Map([
+  ["question", "What is the best programming language in the world?"],
+  [1, "C"],
+  [2, "Java"],
+  [3, "JavaScript"],
+  ["correct", 3],
+  [true, "Correct!😁"],
+  [false, "Try again!"],
+]);
+
+console.log(question);
+
+// Convert Objetos em Maps
+console.log(Object.entries(openingHours));
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap);
+
+// Quiz app
+console.log(question.get("question"));
+for (const [key, values] of question) {
+  if (typeof key === "number") console.log(`Answer ${key}: ${values}`);
+}
+const answer = 4;
+console.log(question.get(answer === 3));
+
+// Convert Map to Array
+console.log([...question]);
