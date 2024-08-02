@@ -192,7 +192,7 @@ console.log(staffUnique);
 console.log(new Set('AugustoCastilhoBorges').size);
 
 console.log(setTest.add('arroz'));
-*/
+
 
 ////////// MAPS //////////
 
@@ -233,3 +233,63 @@ console.log(question.get(answer === 3));
 
 // Convert Map to Array
 console.log([...question]);
+
+
+//////////// STRINGS //////////////
+
+const airline = "TAP Air Portugal";
+const plane = "A320";
+
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log("B736"[0]);
+
+console.log(airline.length);
+console.log("B736".length);
+
+console.log(airline.indexOf("r"));
+console.log(airline.lastIndexOf("r"));
+console.log(airline.indexOf("Portugal"));
+
+// Slice Method
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(" ")));
+console.log(airline.slice(airline.indexOf(" ") + 1));
+
+console.log(airline.slice(-2));
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === "B" || s === "E") {
+    console.log(`You got the middle seat`);
+  } else {
+    console.log(`You got luck`);
+  }
+};
+
+checkMiddleSeat("11B");
+checkMiddleSeat("23c");
+checkMiddleSeat("3E");
+
+console.log(new String("jonas"));
+console.log(typeof new String("jonas"));
+*/
+
+const myName = new String("Augusto");
+const myLastName = new String("Castilho");
+
+console.log(myName);
+
+console.log(myName.charAt(5)); 
+
+console.log(myName.concat(' ' + myLastName));  
+
+console.log(myName.indexOf('u')); 
+
+console.log(myName.lastIndexOf('u')); 

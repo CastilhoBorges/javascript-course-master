@@ -169,11 +169,15 @@ console.log(events);
 // 2.
 gameEvents.delete(64);
 
+// 3.
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(
+  `An event happened, on average, every ${time / gameEvents.size} minutes`
+);
+
 // 4.
 for (const [min, event] of gameEvents) {
-  if (min < 45) {
-    console.log(`[Primeiro tempo] ${min}: ${event}`);
-  } else {
-    console.log(`[Segundo Tempo] ${min}: ${event}`);
-  }
+  const half = min <= 45 ? "FIRST" : "SECOND";
+  console.log(`[${half} HALF] ${min}: ${event}`);
 }
