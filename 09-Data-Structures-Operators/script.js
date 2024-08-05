@@ -279,17 +279,79 @@ checkMiddleSeat("3E");
 
 console.log(new String("jonas"));
 console.log(typeof new String("jonas"));
-*/
+
+
+// Métodos de Strings
 
 const myName = new String("Augusto");
 const myLastName = new String("Castilho");
 
 console.log(myName);
 
-console.log(myName.charAt(5)); 
+console.log(myName.charAt(5));
 
-console.log(myName.concat(' ' + myLastName));  
+console.log(myName.concat(" " + myLastName));
 
-console.log(myName.indexOf('u')); 
+console.log(myName.indexOf("u"));
 
-console.log(myName.lastIndexOf('u')); 
+console.log(myName.lastIndexOf("u"));
+
+console.log(myName.slice(1, 4));
+
+console.log(myName.toLowerCase()); // Minusculo
+console.log(myName.toUpperCase()); // Maisculo
+*/
+// Exemplo pratico toLower and toUpper
+const passager = "aUgUstO";
+// Queremos que este nome fique com a primeira maiuscula e o resto minuscula
+const passagerLower = passager.toLowerCase();
+const passagerCorrect = passagerLower[0].toUpperCase() + passagerLower.slice(1);
+console.log(passagerCorrect);
+
+// Função para faciliar
+const passagerCorrectName = function (passager) {
+  passager = passager.toLowerCase();
+  return passager[0].toUpperCase() + passager.slice(1);
+};
+console.log(passagerCorrectName("aUgUstO"));
+
+// Comparing emails
+const email = "augusto@gmail.com";
+const loginEmail = "  augusto@gmail.com  ";
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail, email === normalizedEmail);
+
+// replacing
+const BRcifre = "R$";
+const priceUS = "$288,97";
+let priceBR = priceUS.replace("$", "R$");
+console.log(priceBR);
+// OR
+priceBR = priceUS.replace(priceUS[0], "R$");
+console.log(priceBR);
+// OR
+priceBR = priceUS.replace(priceUS[0], BRcifre);
+console.log(priceBR);
+
+// Podemos tambem substituir palavras inteira de uma string
+const newFrase = "Ohhhh more money!";
+console.log(priceBR.replace(",97", ", " + newFrase));
+
+// Podemos usar expessões regulares para mudar todas as palavras com o mesmo nome em uma frase
+const fraseNew = "Ai meu deus, meu amigo e meu irmão";
+console.log(fraseNew.replace(/meu/g, "era"));
+// Podemos usar includes em strings tambem
+
+// Practice exercise
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes("key") || baggage.includes("gun")) {
+    console.log("You are NOT allowed on board");
+  } else {
+    console.log("Welcome on board! Good Fly");
+  }
+};
+
+checkBaggage("I have a notebook, a Key, a Shirt and a phone");
+checkBaggage("Snaks, hat");
