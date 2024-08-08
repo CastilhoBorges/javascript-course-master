@@ -24,7 +24,7 @@ transformar([2, 2, 2], forTwo);
 Crie uma função filtrar(array, funcao) que recebe uma lista de elementos e uma função, e retorna uma nova lista contendo apenas os elementos que retornam true ao serem passados pela função.
 */
 
-const trueIfEven = function (array) {
+const IfEven = function (array) {
   const evenArr = [];
   for (const item of array) {
     if (item % 2 === 0) evenArr.push(item);
@@ -35,7 +35,7 @@ const trueIfEven = function (array) {
 
 const filtrar = (array, fn) => console.log(fn(array));
 
-filtrar([1, 2, 3, 4, 5, 6, 7, 8, 9], trueIfEven);
+filtrar([1, 2, 3, 4, 5, 6, 7, 8, 9], IfEven);
 
 /*
 3. Funções como Argumentos
