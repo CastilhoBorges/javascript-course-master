@@ -45,7 +45,7 @@ const newCpf = function (person) {
 checkIn(flight, augusto);
 newCpf(augusto);
 checkIn(flight, augusto);
-*/
+
 
 const oneWord = (str) => str.replace(/ /g, "").toLowerCase();
 
@@ -66,3 +66,44 @@ transformer("JavaScript is the best!", oneWord);
 
 const high5 = () => console.log("👨‍💻");
 document.body.addEventListener("click", high5);
+
+
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+greet("Hello")("Jonas");
+const greeterHey = greet("Hey");
+greeterHey("Jonas");
+
+const greet2 = (greeting) => (name) => console.log(`${greeting} ${name}`);
+greet2("Hi")("Castilho!");
+*/
+
+const latam = {
+  airline: "Latam",
+  iatacode: "LT",
+  bookings: [],
+  book(fligthNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iatacode}${fligthNum}`
+    );
+    this.bookings.push({ flight: `${this.iatacode}${fligthNum}`, name });
+  },
+};
+
+latam.book(256, "Augusto Castilho");
+console.log(latam);
+
+const gol = {
+  airline: "Gol",
+  iatacode: "GL",
+  bookings: [],
+};
+
+const book = latam.book;
+
+book.call(gol, 256, "Augusto");
+console.log(gol);
