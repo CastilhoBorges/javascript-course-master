@@ -158,6 +158,10 @@ BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 GOOD LUCK 😀
 */
 
+/*
+const button = document.querySelector(".poll");
+const textInHtml = document.querySelector("h1");
+
 const poll = {
   question: "What is your favourite programming language?",
   options: ["0: Js", "1: Python", "2: Rust", "3: C++"],
@@ -167,8 +171,52 @@ const poll = {
       `${this.question}\n${this.options[0]}\n${this.options[1]}\n${this.options[2]}\n${this.options[3]}`
     );
 
-    result < 4 ? (this.answers[result] += 1) : alert("Numero Invalido");
+    result < 4 && result !== ""
+      ? this.answers[result]++
+      : alert("Numero Invalido");
+
+    this.displayResults(this.answers);
+  },
+  displayResults(arg) {
+    textInHtml.textContent = arg;
   },
 };
 
+button.addEventListener("click", poll.registerNewAnswer.bind(poll));
+*/
+/* Challenge Bonus 
+BONUS TEST DATA 1: [5, 2, 3]
+BONUS TEST DATA 2: [1, 5, 3, 9, 6, 1]
 
+
+// IIFE (Immediately invoked function expressions)
+
+// Normal
+const runOnce = function () {
+  console.log("This will never run again!");
+};
+runOnce();
+
+// IIFE
+(function () {
+  console.log("This will never run again!");
+})();
+
+// IIFE in Arrow Functions 
+(() => console.log("This will never run again!"))();
+
+{
+  const isPrivate = 18288
+}
+*/
+
+const secureBooking = function () {
+  let passangerCount = 0;
+
+  return function () {
+    passangerCount++;
+    console.log(`${passangerCount} passagers`);
+  };
+};
+
+const booker = secureBooking();
