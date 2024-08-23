@@ -3,7 +3,7 @@
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // BANKIST APP
-
+/*
 // Data
 const account1 = {
   owner: "Jonas Schmedtmann",
@@ -95,7 +95,7 @@ console.log(accounts);
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
-
+/*
 const currencies = new Map([
   ["USD", "United States dollar"],
   ["EUR", "Euro"],
@@ -105,7 +105,7 @@ const currencies = new Map([
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
 /////////////////////////////////////////////////
-/*
+
 // Array meyhods
 
 // Slice
@@ -216,3 +216,23 @@ const movUSD = mov.map((mov) => mov / realToDolar);
 console.log(mov);
 console.log(movUSD);
 */
+
+// The filter method
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+const withdraws = movements.filter((a) => a < 0);
+console.log(withdraws);
+
+const arr = [2, 3, 4];
+const newArr = arr.map((val, i, arr) => {
+  return val * 2
+})
+
+console.log(newArr);
+
+const person = [
+  ['nome', 'Augusto'],
+  ['idade', 19],
+  ['animal', 'leão']
+]
+
+const newObj = person.reduce((acc, []))
