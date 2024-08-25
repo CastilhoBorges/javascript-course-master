@@ -224,15 +224,19 @@ console.log(withdraws);
 
 const arr = [2, 3, 4];
 const newArr = arr.map((val, i, arr) => {
-  return val * 2
-})
+  return val * 2;
+});
 
 console.log(newArr);
 
 const person = [
-  ['nome', 'Augusto'],
-  ['idade', 19],
-  ['animal', 'leão']
-]
+  ["nome", "Augusto"],
+  ["idade", 19],
+  ["animal", "leão"],
+];
 
-const newObj = person.reduce((acc, []))
+const newObj = person.reduce((acc, [index, value]) => {
+  acc[index] = value;
+  return acc;
+}, {});
+console.log(newObj);
