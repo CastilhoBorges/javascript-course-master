@@ -1,13 +1,14 @@
 "use strict";
 
-/*
+/**/
 const Person = function (name, age) {
   this.nome = name;
   this.age = age;
 };
 
 const person1 = new Person("Augusto", 19);
-console.log(person1);
+const person2 = new Person("Cintia", 46);
+const person3 = new Person("Antõnia", 11);
 
 person1.speakMyName = function () {
   console.log(`My name is ${this.nome}`);
@@ -23,13 +24,20 @@ console.log(person1 instanceof Person); // true
 
 // Prototypes
 console.log(Person.prototype);
+
 Person.prototype.calcBirthYear = function () {
   console.log(2024 - this.age);
 };
 
+Person.prototype.species = "Homo Sapiens";
+
 person1.calcBirthYear();
+person2.calcBirthYear();
+person3.calcBirthYear();
 
-
+console.log(person1.__proto__ === Person.prototype); // true
+console.log(person1);
+/*
 class Carro {
   constructor(nome, tipo) {
     this.nome = nome;
@@ -77,6 +85,7 @@ c1.setVel(700);
 console.log(c1.getInfo());
 */
 
+/*
 // Alguns exercicios
 class Carro {
   constructor(marca, modelo, ano) {
@@ -116,7 +125,7 @@ class Animal {
   }
 }
 
-/*
+
 class Cachorro extends Animal {
     // Sobrescreve o método fazerSom
     fazerSom() {
@@ -124,7 +133,7 @@ class Cachorro extends Animal {
     }
 }
 
-*/
+
 
 Animal.prototype.fazerSom = function () {
   if (this.nome === "cachorro") return "Au Au";
@@ -133,3 +142,4 @@ Animal.prototype.fazerSom = function () {
 
 const myDog = new Animal("cachorro");
 console.log(myDog.fazerSom());
+*/
