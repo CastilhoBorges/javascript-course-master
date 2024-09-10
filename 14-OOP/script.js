@@ -1,6 +1,6 @@
 "use strict";
 
-/**/
+/*
 const Person = function (name, age) {
   this.nome = name;
   this.age = age;
@@ -37,6 +37,11 @@ person3.calcBirthYear();
 
 console.log(person1.__proto__ === Person.prototype); // true
 console.log(person1);
+
+const h1 = document.querySelector("h1");
+console.dir(h1)
+*/
+
 /*
 class Carro {
   constructor(nome, tipo) {
@@ -143,3 +148,72 @@ Animal.prototype.fazerSom = function () {
 const myDog = new Animal("cachorro");
 console.log(myDog.fazerSom());
 */
+
+// Coding Challenge #1
+
+/* 
+1. Use a constructor function to implement a Car. A car has a make and a speed property. The speed property is the current speed of the car in km/h;
+2. Implement an 'accelerate' method that will increase the car's speed by 10, and log the new speed to the console;
+3. Implement a 'brake' method that will decrease the car's speed by 5, and log the new speed to the console;
+4. Create 2 car objects and experiment with calling 'accelerate' and 'brake' multiple times on each of them.
+
+DATA CAR 1: 'BMW' going at 120 km/h
+DATA CAR 2: 'Mercedes' going at 95 km/h
+
+GOOD LUCK 😀
+
+
+const Car = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car.prototype.accelerate = function () {
+  this.speed += 10;
+  console.log(`The car is ${this.speed} for hour`);
+};
+
+Car.prototype.brake = function () {
+  this.speed -= 5;
+  console.log(`The car is ${this.speed} for hour`);
+};
+
+Car.prototype.verifyFast = function () {
+  const type = this.speed > 200 ? "Sport" : "Comun";
+  this.type = type;
+};
+
+const bmw = new Car("BMW", 200);
+const mercedes = new Car("Mercedes", 190);
+
+console.log(bmw); // {make: 'BMW', speed: 200}
+console.log(mercedes); // {make: 'Mercedes', speed: 190}
+
+for (let i = 1; i < 5; i++) bmw.accelerate();
+for (let i = 1; i < 8; i++) bmw.brake();
+console.log(bmw); // {make: 'BMW', speed: 205}
+
+for (let i = 1; i < 20; i++) mercedes.brake();
+for (let i = 1; i < 35; i++) mercedes.accelerate();
+console.log(mercedes); // {make: 'Mercedes', speed: 435}
+
+bmw.verifyFast();
+mercedes.verifyFast();
+
+const corsa = new Car("Corsa", 120);
+corsa.verifyFast();
+
+console.log(bmw); // {make: 'BMW', speed: 205, type: 'Sport'}
+console.log(mercedes); // {make: 'Mercedes', speed: 435, type: 'Sport'}
+console.log(corsa); // {make: 'Corsa', speed: 120, type: 'Comun'}
+*/
+
+const pyramidGenerator = function (caracter, count, direction) {
+  for (let i = 1; i <= count; i++) {
+    if (direction === "high") {
+      const str = ca;
+    }
+  }
+};
+
+const str = "High";
