@@ -208,12 +208,20 @@ console.log(mercedes); // {make: 'Mercedes', speed: 435, type: 'Sport'}
 console.log(corsa); // {make: 'Corsa', speed: 120, type: 'Comun'}
 */
 
-const pyramidGenerator = function (caracter, count, direction) {
-  for (let i = 1; i <= count; i++) {
-    if (direction === "high") {
-      const str = ca;
-    }
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
   }
-};
 
-const str = "High";
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  }
+}
+
+const augusto = new PersonCl("Augusto", 2005);
+console.log(augusto);
+augusto.calcAge();
+// As classes não são Iaçadas
+// Classes são first-class citizes
+// Todo o codigo dentro das classes é executado em strict mode
