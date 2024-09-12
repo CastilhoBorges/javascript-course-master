@@ -217,11 +217,27 @@ class PersonCl {
   calcAge() {
     console.log(2024 - this.birthYear);
   }
+
+  get age() {
+    return 2024 - this.birthYear;
+  }
+
+  set fullName(name) {
+    this.fullName = name;
+  }
+
+  static hey() {
+    console.log("Hey");
+  }
 }
 
 const augusto = new PersonCl("Augusto", 2005);
-console.log(augusto);
-augusto.calcAge();
+
+PersonCl.hey(); // Hey
+augusto.hey(); // Error 
+
 // As classes não são Iaçadas
 // Classes são first-class citizes
 // Todo o codigo dentro das classes é executado em strict mode
+
+// Metodos que estão na função contrutora se chamam metodos estaticos pois não podem ser acessados pelo prototype
