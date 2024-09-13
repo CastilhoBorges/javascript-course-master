@@ -206,7 +206,7 @@ corsa.verifyFast();
 console.log(bmw); // {make: 'BMW', speed: 205, type: 'Sport'}
 console.log(mercedes); // {make: 'Mercedes', speed: 435, type: 'Sport'}
 console.log(corsa); // {make: 'Corsa', speed: 120, type: 'Comun'}
-*/
+
 
 class PersonCl {
   constructor(firstName, birthYear) {
@@ -236,8 +236,74 @@ const augusto = new PersonCl("Augusto", 2005);
 PersonCl.hey(); // Hey
 augusto.hey(); // Error 
 
+
 // As classes não são Iaçadas
 // Classes são first-class citizes
 // Todo o codigo dentro das classes é executado em strict mode
 
-// Metodos que estão na função contrutora se chamam metodos estaticos pois não podem ser acessados pelo prototype
+// Metodos que estão na função contrutora se chamam metodos estaticos pois não podem ser acessados pelo prototy
+
+const PersonProto = {
+  calcAge() {
+    console.log(2024 - this.birthYear);
+  },
+
+  init(name, birthYear) {
+    this.name = name;
+    this.birthYear = birthYear;
+  },
+};
+
+const steven = Object.create(PersonProto);
+steven.init("Steven", 2005);
+steven.calcAge();
+console.log(steven);
+*/
+
+// Coding Challenge #2
+
+/* 
+1. Re-create challenge 1, but this time using an ES6 class;
+2. Add a getter called 'speedUS' which returns the current speed in mi/h (divide by 1.6);
+3. Add a setter called 'speedUS' which sets the current speed in mi/h (but converts it to km/h before storing the value, by multiplying the input by 1.6);
+4. Create a new car and experiment with the accelerate and brake methods, and with the getter and setter.
+
+DATA CAR 1: 'Ford' going at 120 km/h
+
+GOOD LUCK 😀
+*/
+
+class Car {
+  constructor(make, speed) {
+    this.make = make;
+    this.speed = speed;
+  }
+
+  accelerate() {
+    this.speed += 10;
+    console.log(`The car is ${this.speed} for hour`);
+  }
+
+  break() {
+    this.speed -= 5;
+    console.log(`The car is ${this.speed} for hour`);
+  }
+
+  get speedUS() {
+    return this.speed / 1.6;
+  }
+
+  set speedUS(speedInMi) {
+    this.speed = speedInMi * 1.6;
+  }
+}
+
+const ford = new Car("Ford", 120);
+ford.accelerate();
+ford.accelerate();
+ford.break();
+ford.break();
+ford.speedUS;
+console.log(ford);
+ford.speedUS = 10;
+console.log(ford);
