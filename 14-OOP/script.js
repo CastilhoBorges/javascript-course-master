@@ -271,7 +271,7 @@ console.log(steven);
 DATA CAR 1: 'Ford' going at 120 km/h
 
 GOOD LUCK 😀
-*/
+
 
 class Car {
   constructor(make, speed) {
@@ -307,3 +307,5 @@ ford.speedUS;
 console.log(ford);
 ford.speedUS = 10;
 console.log(ford);
+*/
+
