@@ -309,3 +309,93 @@ ford.speedUS = 10;
 console.log(ford);
 */
 
+class Person {
+  name;
+
+  constructor(name) {
+    this.name = name;
+  }
+
+  aopa() {
+    console.log("Olá, eu sou o " + this.name);
+  }
+}
+
+class Professor extends Person {
+  materia;
+
+  constructor(name, materia) {
+    super(name);
+    this.materia = materia;
+  }
+}
+
+const aristoteles = new Professor("Aristoteles", "Filosofia");
+
+class Aluno extends Person {
+  #year;
+
+  constructor(name, year) {
+    super(name);
+    this.#year = year;
+  }
+
+  falarIdade() {
+    console.log(`Eu tenho ${this.#year}`);
+  }
+}
+
+const augusto = new Aluno("Augusto", 19);
+augusto.falarIdade();
+
+class Example {
+  publico() {
+    this.#privado();
+  }
+
+  #privado() {
+    console.log("Voce me chamou?");
+  }
+}
+
+const meuExemplo = new Example();
+meuExemplo.publico();
+// meuExemplo.#privado(); SyntaxError
+
+class Shape {
+  name;
+  sides;
+  sideLength;
+
+  constructor(name, sides, sideLength) {
+    this.name = name;
+    this.sides = sides;
+    this.sideLength = sideLength;
+  }
+
+  calcPerimetro() {
+    console.log(this.sides * this.sideLength);
+  }
+}
+
+const quadrado = new Shape("Quadrado", 4, 5);
+quadrado.calcPerimetro();
+
+const triangulo = new Shape("Triangulo", 3, 3);
+triangulo.calcPerimetro();
+
+class Quadrado extends Shape {
+  constructor(sideLength) {
+    super("square");
+    this.sides = 4;
+    this.sideLength = sideLength;
+  }
+
+  calcArea() {
+    console.log(this.sideLength ** 2);
+  }
+}
+
+const q1 = new Quadrado(10);
+q1.calcArea();
+q1.calcPerimetro();
