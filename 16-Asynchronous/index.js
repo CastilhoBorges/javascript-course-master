@@ -91,3 +91,24 @@ const myPromise = new Promise((res, rej) => {
 
 myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
 */
+
+async function obterDados() {
+  try {
+    const response = await fetch(
+      "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error: ${response.status}`);
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(`Não foi possível obter os produtos: ${error}`);
+  }
+}
+
+const tenta = obterDados();
+tenta.then((res) => console.log(res)).catch((err) => console.log(err));
+
+console.log("AAAA");
+console.log("AAAABBBB");
