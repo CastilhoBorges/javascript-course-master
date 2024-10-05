@@ -94,8 +94,12 @@ myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
 
 async function obterDados() {
   try {
+    console.log("AAAA");
+    console.log("AAAABBBB");
+    console.log("CCCC");
+    console.log("DDDD");
     const response = await fetch(
-      "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
+      "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.jso"
     );
     if (!response.ok) {
       throw new Error(`HTTP error: ${response.status}`);
@@ -110,5 +114,6 @@ async function obterDados() {
 const tenta = obterDados();
 tenta.then((res) => console.log(res)).catch((err) => console.log(err));
 
-console.log("AAAA");
-console.log("AAAABBBB");
+for (let i = 0; i < 10000; i++) {
+  console.log("AABBCC");
+}
