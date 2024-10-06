@@ -114,6 +114,6 @@ async function obterDados() {
 const tenta = obterDados();
 tenta.then((res) => console.log(res)).catch((err) => console.log(err));
 
-for (let i = 0; i < 10000; i++) {
+for (let i = 0; i < 100; i++) {
   console.log("AABBCC");
 }
