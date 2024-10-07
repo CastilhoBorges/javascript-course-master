@@ -90,7 +90,7 @@ const myPromise = new Promise((res, rej) => {
 });
 
 myPromise.then((res) => console.log(res)).catch((err) => console.log(err));
-*/
+
 
 async function obterDados() {
   try {
@@ -117,3 +117,9 @@ tenta.then((res) => console.log(res)).catch((err) => console.log(err));
 for (let i = 0; i < 100; i++) {
   console.log("AABBCC");
 }
+*/
+
+// aprendendo importar modulos 
+import { falarIngles } from "./atividades.js";
+
+falarIngles();
